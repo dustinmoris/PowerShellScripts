@@ -146,7 +146,7 @@ function dotnet-test ($project, $argv)
     # Previously dotnet-xunit was a working alternative, however
     # after issues with the maintenance of dotnet xunit it has been
     # discontinued since xunit 2.4: https://xunit.github.io/releases/2.4
-    if(!(Test-IsWindows) -or $OnlyNetStandard.IsPresent)
+    if(!(Test-IsWindows))
     {
         $fw = Get-NetCoreTargetFramework $project;
         $argv = "-f $fw " + $argv
